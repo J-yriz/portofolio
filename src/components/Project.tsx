@@ -17,8 +17,9 @@ const Project = () => {
   }, [setProArr]);
 
   const handleModal = (data?: IDataModal) => {
-    showModal ? (document.body.style.overflow = "auto") : (document.body.style.overflow = "hidden");
-    data && setDataModal(data);
+    if (showModal) document.body.style.overflow = "auto";
+    else document.body.style.overflow = "hidden";
+    if (data) setDataModal(data);
     setShowModal(!showModal);
   };
 
@@ -55,7 +56,7 @@ const Project = () => {
                 <div className="flex flex-col ml-2 space-y-1">
                   <ul>
                     {dataModal.languange.map((lang, index) => (
-                      <li className="inline-block mr-2">
+                      <li key={index} className="inline-block mr-2">
                         <Image src={`/image/skills/${lang.toLowerCase()}.webp`} key={index} width={30} height={30} alt={`${lang}`} />
                       </li>
                     ))}
