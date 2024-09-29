@@ -1,0 +1,83 @@
+[
+  {
+    "name": "Jariz-Porto",
+    "year": "2023",
+    "website": "#",
+    "github": "https://github.com/J-yriz/portofolio",
+    "languange": [
+      "NodeJS",
+      "NextJS",
+      "TypeScript",
+      "Tailwind"
+    ],
+    "discription": "This is a portfolio website that I made for my self, this website is made using NextJS, TypeScript, and TailwindCSS."
+  },
+  {
+    "name": "Discord-Bot-Express",
+    "year": "2023",
+    "website": "",
+    "github": "https://github.com/Raznar-Lab",
+    "languange": [
+      "NodeJS",
+      "EJS",
+      "Express",
+      "TypeScript",
+      "Prisma",
+      "MySQL"
+    ],
+    "discription": "Invoices system for freelancer that can be used to see invoices, project or task this website is made using NodeJS, EJS, Express, TypeScript, Prisma, and MySQL."
+  },
+  {
+    "name": "Discord-Bot-Invoice",
+    "year": "2023",
+    "website": "",
+    "github": "https://github.com/Raznar-Lab",
+    "languange": [
+      "NodeJS",
+      "DiscordJS",
+      "TypeScript",
+      "Prisma",
+      "MySQL"
+    ],
+    "discription": "Invoices system for freelancer that can be used to create invoices, and create project or task this bot is made using NodeJS, TypeScript, DiscordJS, Prisma, and MySQL."
+  },
+  {
+    "name": "Nezon-Porto",
+    "year": "2023",
+    "website": "https://nezon-porto.vercel.app/",
+    "github": "https://github.com/J-yriz/nezon-porto",
+    "languange": [
+      "NodeJS",
+      "NextJS",
+      "TypeScript",
+      "Tailwind"
+    ],
+    "discription": "Discord bot that can play music in voice channel from user request, this bot is made using NodeJS, TypeScript, and DiscordJS."
+  },
+  {
+    "name": "Discord-Bot-Music",
+    "year": "2023",
+    "website": "",
+    "github": "https://github.com/J-yriz/discordbot-ts",
+    "languange": [
+      "NodeJS",
+      "TypeScript",
+      "DiscordJS"
+    ],
+    "discription": "Discord bot that can play music in voice channel from user request, this bot is made using NodeJS, TypeScript, and DiscordJS."
+  },
+  {
+    "name": "Spotify-Clone",
+    "year": "2023",
+    "website": "",
+    "github": "https://github.com/J-yriz/spotifyclone-nextjs",
+    "languange": [
+      "NodeJS",
+      "NextJS",
+      "JavaScript",
+      "Tailwind",
+      "Express"
+    ],
+    "discription": "This is a clone of the Spotify website, this website is made using NextJS, JavaScript, and TailwindCSS."
+  }
+]

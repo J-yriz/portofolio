@@ -1,40 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/legacy/image";
 import { IDataModal } from "@/utility/Types";
 
-const ProArr = [
-  {
-    name: "Jariz-Porto",
-    year: "2023",
-    website: "#",
-    github: "https://github.com/J-yriz/nezon-porto",
-    languange: ["NextJS", "TypeScript", "Tailwind"],
-    discription: "This is a portfolio website that I made for my self, this website is made using NextJS, TypeScript, and TailwindCSS.",
-  },
-  {
-    name: "Nezon-Porto",
-    year: "2023",
-    website: "https://nezon-porto.vercel.app/",
-    github: "https://github.com/J-yriz/nezon-porto",
-    languange: ["NextJS", "TypeScript", "Tailwind"],
-    discription: "This is a portfolio website that I made for my friend, this website is made using NextJS, TypeScript, and TailwindCSS.",
-  },
-  {
-    name: "Spotify-Clone",
-    year: "2023",
-    website: "",
-    github: "https://github.com/J-yriz/spotifyclone-nextjs",
-    languange: ["NextJS", "JavaScript", "Tailwind", "Express"],
-    discription: "This is a clone of the Spotify website, this website is made using NextJS, JavaScript, and TailwindCSS.",
-  },
-];
-
 const Project = () => {
+  const [ProArr, setProArr] = useState<IDataModal[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [dataModal, setDataModal] = useState<IDataModal>({} as IDataModal);
+
+  useEffect(() => {
+    fetch("/project-data.json")
+      .then((res) => res.json())
+      .then((data) => setProArr(data));
+  }, [setProArr]);
 
   const handleModal = (data?: IDataModal) => {
     showModal ? (document.body.style.overflow = "auto") : (document.body.style.overflow = "hidden");
@@ -97,7 +77,9 @@ const Project = () => {
                 </div>
               </div>
               <div className="flex flex-col space-y-1">
-                <p className="font-semibold">{dataModal.name.split("-").join(" ")} | {dataModal.year}</p>
+                <p className="font-semibold">
+                  {dataModal.name.split("-").join(" ")} | {dataModal.year}
+                </p>
                 <p>{dataModal.discription}</p>
               </div>
             </div>
