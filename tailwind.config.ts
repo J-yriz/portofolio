@@ -11,6 +11,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "huntBlack": "#222831",
+        "huntGray": "#31363F",
+        "huntCyan": "#76ABAE",
+        "huntWhite": "#EEEEEE",
       },
     },
   },
