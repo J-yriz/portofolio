@@ -1,7 +1,7 @@
 const About = () => (
   <>
     <div id="about" className="scroll-mt-20">
-      <div className="flex relative">
+      <div className="flex relative mb-2">
         <p className="text-2xl">ABOUT</p>
         <div className="border-t-2 w-8 border-huntCyan absolute top-1/2 left-24"></div>
       </div>

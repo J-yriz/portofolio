@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/legacy/image";
+
+import useWindowsWidth from "@/utility/windowWitdh";
 
 const SkillObj = {
   HTML: "https://www.w3schools.com/html/html_intro.asp",
@@ -16,22 +20,27 @@ const SkillObj = {
   MySQL: "https://www.mysql.com/",
 };
 
-const Skills = () => (
-  <div id="skills" className="scroll-mt-20">
-    <div className="flex items-center justify-center">
-      <p className="text-2xl bg-huntGray z-10">SKILLS</p>
+const Skills = () => {
+  const windowWidth = useWindowsWidth();
+  const ukuranGambar = windowWidth <= 640 ? 50 : 80;
+
+  return (
+    <div id="skills" className="scroll-mt-20">
+      <div className="flex items-center justify-center">
+        <p className="text-2xl bg-huntGray z-10">SKILLS</p>
+      </div>
+      <div className="flex flex-wrap items-center gap-5 justify-center mt-5">
+        {Object.entries(SkillObj).map(([name, link]) => (
+          <Link key={name} href={link} target="_blank">
+            <div className="flex flex-col space-y-2 items-center justify-center bg-[#4a4e57] hover:bg-huntCyan transition-all w-24 h-24 sm:w-36 sm:h-36 rounded-lg">
+              <Image src={`/image/skills/${name.toLowerCase()}.webp`} width={ukuranGambar} height={ukuranGambar} alt={`${name}`} />
+              <p>{name}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
-    <div className="flex flex-wrap items-center gap-5 justify-center mt-5">
-      {Object.entries(SkillObj).map(([name, link]) => (
-        <Link key={name} href={link} target="_blank">
-          <div className="flex flex-col space-y-2 items-center justify-center bg-[#4a4e57] hover:bg-huntCyan transition-all w-36 h-36 rounded-lg">
-            <Image src={`/image/skills/${name.toLowerCase()}.webp`} width={80} height={80} alt={`${name}`} />
-            <p>{name}</p>
-          </div>
-        </Link>
-      ))}
-    </div>
-  </div>
-);
+  );
+};
 
 export default Skills;

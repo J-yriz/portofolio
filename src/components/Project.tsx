@@ -3,9 +3,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/legacy/image";
+import { CloseIcon } from "@/utility/Icons";
 import { IDataModal } from "@/utility/Types";
+import useWindowWidth from "@/utility/windowWitdh";
 
 const Project = () => {
+  const windowWidth = useWindowWidth();
   const [ProArr, setProArr] = useState<IDataModal[]>([]);
   const [showModal, setShowModal] = useState(false);
   const [dataModal, setDataModal] = useState<IDataModal>({} as IDataModal);
@@ -32,28 +35,29 @@ const Project = () => {
           </div>
           <div className="border-t-2 border-huntCyan w-full absolute"></div>
         </div>
-        <div className="flex flex-wrap gap-5 justify-center mt-5">
+        <div className="flex flex-wrap gap-3 justify-center mt-5">
           {ProArr.map((data) => (
             <button key={data.name} onClick={() => handleModal(data)} className="hover:scale-105 transition-transform">
-              <Image src={`/image/project/${data.name}.webp`} width={288} height={162} alt={`${data.name}`} />
+              <Image
+                src={`/image/project/${data.name}.webp`}
+                width={windowWidth <= 768 ? 268 : 288}
+                height={windowWidth <= 768 ? 142 : 162}
+                alt={`${data.name}`}
+              />
             </button>
           ))}
         </div>
         {showModal && (
           <div className="fixed inset-0 flex items-center justify-center z-50 bg-huntBlack/50">
             <div className="bg-huntGray p-3 pr-10 rounded w-[520px] relative">
-              <button className="absolute top-0 right-0 bg-[#9ca3af] rounded-bl-md rounded-tr" onClick={() => handleModal()}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" className="size-10">
-                  <path
-                    fillRule="evenodd"
-                    d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+              <button className="absolute top-0 right-0 block w-10 h-10 bg-[#9ca3af] rounded-bl-md rounded-tr" onClick={() => handleModal()}>
+                <CloseIcon />
               </button>
-              <div className="flex">
-                <Image src={`/image/project/${dataModal.name}.webp`} width={296} height={170} alt={`${dataModal.name}`} />
-                <div className="flex flex-col ml-2 space-y-1">
+              <div className="flex flex-col items-center sm:items-start sm:flex-row">
+                <div className="w-[296px] h-[170px]">
+                  <Image src={`/image/project/${dataModal.name}.webp`} width={296} height={170} alt={`${dataModal.name}`} />
+                </div>
+                <div className="my-2 sm:my-0 flex flex-col ml-2 space-y-1">
                   <ul>
                     {dataModal.languange.map((lang, index) => (
                       <li key={index} className="inline-block mr-2">
