@@ -15,7 +15,14 @@ const NavObj = {
 const NavDirect = ({ setNavPhone }: { setNavPhone: React.Dispatch<boolean> }) => (
   <>
     {Object.entries(NavObj).map(([path, value], index) => (
-      <Link onClick={() => {setNavPhone(false)}} key={index} href={path} className="hover:text-huntCyan transition-colors">
+      <Link
+        onClick={() => {
+          setNavPhone(false);
+        }}
+        key={index}
+        href={path}
+        className="hover:text-huntCyan transition-colors"
+      >
         {value.toUpperCase()}
       </Link>
     ))}
@@ -33,11 +40,13 @@ const Navbar = () => {
     }
   }, [windowWidth]);
 
-  const handleNavPhone = () => {
-    if (navPhone) document.body.style.overflow = "auto";
-    else document.body.style.overflow = "hidden";
-    setNavPhone(!navPhone);
-  };
+  useEffect(() => {
+    if (navPhone) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [navPhone]);
 
   return (
     <nav className={`bg-huntBlack sticky top-0 py-5 ${navPhone ? "z-50" : "z-40"}`}>
@@ -46,7 +55,11 @@ const Navbar = () => {
       </div>
       <div className="sm:hidden flex items-center justify-between px-5">
         {windowWidth <= 640 && <p className="font-semibold text-2xl">JARIZ</p>}
-        <button onClick={handleNavPhone}>
+        <button
+          onClick={() => {
+            setNavPhone(true);
+          }}
+        >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
             <path
               fillRule="evenodd"
@@ -58,7 +71,7 @@ const Navbar = () => {
       </div>
       {navPhone && (
         <div className="fixed sm:hidden show top-0 bg-huntBlack w-full h-full">
-          <button onClick={handleNavPhone} className="block w-10 h-10 absolute bg-huntWhite top-5 right-5 rounded-md">
+          <button onClick={() => setNavPhone(false)} className="block w-10 h-10 absolute bg-huntWhite top-5 right-5 rounded-md">
             <CloseIcon />
           </button>
           <div className="flex flex-col m-5 space-y-1 h-full">
