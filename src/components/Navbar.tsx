@@ -12,10 +12,10 @@ const NavObj = {
   "#contact": "contact",
 };
 
-const NavDirect = ({ handleNavPhone }: { handleNavPhone: () => void }) => (
+const NavDirect = ({ setNavPhone }: { setNavPhone: React.Dispatch<boolean> }) => (
   <>
     {Object.entries(NavObj).map(([path, value], index) => (
-      <Link onClick={handleNavPhone} key={index} href={path} className="hover:text-huntCyan transition-colors">
+      <Link onClick={() => {setNavPhone(false)}} key={index} href={path} className="hover:text-huntCyan transition-colors">
         {value.toUpperCase()}
       </Link>
     ))}
@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <nav className={`bg-huntBlack sticky top-0 py-5 ${navPhone ? "z-50" : "z-40"}`}>
       <div className="hidden sm:flex space-x-5 items-center justify-center container mx-auto">
-        <NavDirect handleNavPhone={handleNavPhone} />
+        <NavDirect setNavPhone={setNavPhone} />
       </div>
       <div className="sm:hidden flex items-center justify-between px-5">
         {windowWidth <= 640 && <p className="font-semibold text-2xl">JARIZ</p>}
@@ -62,7 +62,7 @@ const Navbar = () => {
             <CloseIcon />
           </button>
           <div className="flex flex-col m-5 space-y-1 h-full">
-            <NavDirect handleNavPhone={handleNavPhone} />
+            <NavDirect setNavPhone={setNavPhone} />
           </div>
         </div>
       )}
