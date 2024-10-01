@@ -49,7 +49,7 @@ const Project = () => {
         </div>
         {showModal && (
           <div className="fixed inset-0 flex items-center justify-center z-50 bg-huntBlack/50">
-            <div className="bg-huntGray p-3 pr-10 rounded w-[520px] relative">
+            <div className="bg-huntGray p-3 rounded w-[520px] relative">
               <button className="absolute top-0 right-0 block w-10 h-10 bg-[#9ca3af] rounded-bl-md rounded-tr" onClick={() => handleModal()}>
                 <CloseIcon />
               </button>
@@ -57,28 +57,28 @@ const Project = () => {
                 <div className="w-[296px] h-[170px]">
                   <Image src={`/image/project/${dataModal.name}.webp`} width={296} height={170} alt={`${dataModal.name}`} />
                 </div>
-                <div className="my-2 sm:my-0 flex flex-col ml-2 space-y-1">
-                  <ul>
+                <div className="my-2 sm:my-0 w-full sm:w-auto flex flex-col ml-2 space-y-1">
+                  <ul className="w-full sm:w-40 flex justify-center">
                     {dataModal.languange.map((lang, index) => (
                       <li key={index} className="inline-block mr-2">
                         <Image src={`/image/skills/${lang.toLowerCase()}.webp`} key={index} width={30} height={30} alt={`${lang}`} />
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    href={`${dataModal.website}`}
-                    target="_blank"
-                    className="bg-huntBlack hover:bg-huntCyan transition-colors text-center p-2 rounded"
-                  >
-                    {dataModal.website ? "Link Preview" : "Not Available"}
-                  </Link>{" "}
-                  <Link
-                    href={`${dataModal.github}`}
-                    target="_blank"
-                    className="bg-huntBlack hover:bg-huntCyan transition-colors text-center p-2 rounded"
-                  >
-                    {dataModal.github ? "Link GitHub" : "Not Available"}
-                  </Link>
+                    <Link
+                      href={`${dataModal.website}`}
+                      target="_blank"
+                      className="bg-huntBlack hover:bg-huntCyan transition-colors text-center p-2 rounded"
+                    >
+                      {dataModal.website ? "Link Preview" : "Not Available"}
+                    </Link>{" "}
+                    <Link
+                      href={`${dataModal.github}`}
+                      target="_blank"
+                      className="bg-huntBlack hover:bg-huntCyan transition-colors text-center p-2 rounded"
+                    >
+                      {dataModal.github ? "Link GitHub" : "Not Available"}
+                    </Link>
                 </div>
               </div>
               <div className="flex flex-col space-y-1">
