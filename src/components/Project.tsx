@@ -58,7 +58,7 @@ const Project = () => {
                   <Image src={`/image/project/${dataModal.name}.webp`} width={296} height={170} alt={`${dataModal.name}`} />
                 </div>
                 <div className="my-2 sm:my-0 w-full sm:w-auto flex flex-col ml-2 space-y-1">
-                  <ul className="w-full sm:w-40 flex justify-center">
+                  <ul className="w-full sm:w-40 flex flex-wrap justify-center sm:justify-normal">
                     {dataModal.languange.map((lang, index) => (
                       <li key={index} className="inline-block mr-2">
                         <Image src={`/image/skills/${lang.toLowerCase()}.webp`} key={index} width={30} height={30} alt={`${lang}`} />
