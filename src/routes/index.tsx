@@ -21,10 +21,7 @@ function HomePage() {
       {/* Hero */}
       <section className="container hero">
         <div className="hero-copy">
-          <p className="pill">
-            <span className="dot" aria-hidden />
-            {site.availability}
-          </p>
+          <p className="hero-kicker">{site.availability}</p>
           <h1 className="hero-title">
             Fajar Aziz
             Kurniawan.
@@ -43,10 +40,22 @@ function HomePage() {
           </dl>
         </div>
 
-        <div className="hero-visual" aria-hidden>
-          <div className="hero-backdrop" />
+        <div className="hero-visual">
+          <div className="hero-backdrop" aria-hidden>
+            {site.portraitBackdrop && (
+              <img src={site.portraitBackdrop} alt="" loading="lazy" />
+            )}
+          </div>
           <div className="hero-mono">
-            <span>J</span>
+            {site.portrait ? (
+              <img
+                src={site.portrait}
+                alt={site.portraitAlt}
+                fetchPriority="high"
+              />
+            ) : (
+              <span aria-hidden>J</span>
+            )}
           </div>
           <div className="hero-badge">
             <MapPin size={20} weight="fill" />

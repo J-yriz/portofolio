@@ -189,27 +189,22 @@ img {
   border-color: var(--ink);
 }
 
-/* Status chip (availability badge) */
-.pill {
+/* Availability kicker — editorial rule + plain text, no pill / dot / shadow */
+.hero-kicker {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  border-radius: var(--radius-pill);
-  background: var(--card);
-  border: 1px solid var(--line);
-  font-size: 12px;
+  gap: 12px;
+  margin: 0;
+  font-size: 18px;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  box-shadow: 0 2px 8px -4px rgba(26, 26, 26, 0.15);
+  letter-spacing: 0.02em;
+  color: var(--pine);
 }
 
-.pill .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+.hero-kicker::before {
+  content: '';
+  width: 36px;
+  height: 3px;
   background: var(--pine);
   flex-shrink: 0;
 }

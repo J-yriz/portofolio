@@ -9,10 +9,7 @@ export function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <p className="footer-eyebrow">
-          <span className="footer-pulse" aria-hidden />
-          {site.availability}
-        </p>
+        <p className="footer-eyebrow">{site.availability}</p>
         <div className="footer-grid">
           <div>
             <h2 className="footer-title">

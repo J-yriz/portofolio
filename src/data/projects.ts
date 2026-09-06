@@ -5,14 +5,11 @@
    Leave empty to render a monogram tile instead.
    `category` drives the filter on the Projects page. */
 
-export type ProjectCategory = 'web' | 'backend' | 'bot' | 'site' | 'opensource'
+export type ProjectCategory = 'web' | 'opensource'
 
 export const projectCategories: { value: ProjectCategory | 'all'; label: string }[] = [
   { value: 'all', label: 'All' },
   { value: 'web', label: 'Web Apps' },
-  { value: 'backend', label: 'Backend & APIs' },
-  { value: 'bot', label: 'Bots' },
-  { value: 'site', label: 'Websites' },
   { value: 'opensource', label: 'Open Source' },
 ]
 
@@ -79,7 +76,7 @@ export const projects: Project[] = [
   {
     name: 'Nezon Portfolio',
     year: '2023',
-    category: 'site',
+    category: 'web',
     categoryLabel: 'Portfolio',
     description:
       'Portfolio website built for Nezon. Next.js with TypeScript and Tailwind CSS.',
