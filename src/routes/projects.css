@@ -1,0 +1,67 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 36px;
+}
+
+.filter-btn {
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: var(--card);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  transition:
+    background-color 0.2s var(--ease-out),
+    color 0.2s var(--ease-out),
+    transform 0.2s var(--ease-out);
+}
+
+.filter-btn:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.filter-btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.filter-btn.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.filter-count {
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.projects-grid .reveal,
+.projects-grid .project-card {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

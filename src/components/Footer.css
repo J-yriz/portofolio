@@ -1,0 +1,123 @@
+/* Dark closing block — the single deliberate theme switch per page. */
+.footer {
+  margin-top: 96px;
+  background: #101312;
+  color: #f2f2ef;
+  border-radius: 32px 32px 0 0;
+  padding: 72px 0 32px;
+}
+
+.footer-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a9b3ad;
+}
+
+.footer-pulse {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #4ade80;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 48px;
+  margin-top: 24px;
+}
+
+.footer-title {
+  font-size: clamp(40px, 6vw, 76px);
+  max-width: 12ch;
+  color: #f2f2ef;
+}
+
+.footer-mail {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #f2f2ef;
+  text-decoration: underline;
+  text-decoration-color: rgba(242, 242, 239, 0.35);
+  text-underline-offset: 6px;
+  transition: text-decoration-color 0.2s var(--ease-out);
+}
+
+.footer-mail:hover {
+  text-decoration-color: #4ade80;
+}
+
+.footer-cols {
+  display: flex;
+  gap: 72px;
+}
+
+.footer-col-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8b948e;
+  margin-bottom: 16px;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  color: #d7d9d4;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.2s var(--ease-out);
+}
+
+.footer-link:hover {
+  color: #4ade80;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(242, 242, 239, 0.14);
+  color: #8b948e;
+  font-size: 14px;
+}
+
+.footer-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #d7d9d4;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-top:hover {
+  color: #4ade80;
+}
+
+@media (min-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+  }
+
+  .footer-cols {
+    justify-content: end;
+  }
+}

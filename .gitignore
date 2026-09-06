@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Vite / TS build cache
+*.tsbuildinfo
+vite.config.*.timestamp-*.mjs
+
+# TanStack Router generated + cache - regenerated on dev/build
+.tanstack/
+
+# Playwright MCP logs - local debug only
+.playwright-mcp/
+
+# Vercel link + build output
+.vercel
+
+# Env files
+.env
+.env.*
+
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

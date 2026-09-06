@@ -1,0 +1,181 @@
+.row-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: clamp(30px, 4vw, 44px);
+  color: var(--pine);
+}
+
+/* Capabilities — 2-col cards, not a long list */
+.caps-grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.cap-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: 32px 28px;
+}
+
+.cap-card h3 {
+  font-size: 22px;
+  margin-top: 12px;
+}
+
+.cap-card p {
+  color: var(--muted);
+  font-size: 15px;
+  margin-top: 8px;
+  line-height: 1.65;
+}
+
+.cap-num {
+  font-size: 14px;
+  color: var(--pine);
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .caps-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.timeline-row {
+  display: grid;
+  gap: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: 32px 28px;
+}
+
+.timeline-row h3 {
+  font-size: 24px;
+}
+
+.timeline-company {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+  font-weight: 600;
+  color: var(--pine);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+a.timeline-company:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.timeline-body {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 62ch;
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.timeline-side {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.timeline-period {
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline-loc {
+  font-size: 14px;
+  color: var(--faint);
+  margin-top: 2px;
+}
+
+@media (min-width: 900px) {
+  .timeline-row {
+    grid-template-columns: 1fr 220px;
+  }
+
+  .timeline-side {
+    border-top: none;
+    border-left: 1px solid var(--line);
+    padding-top: 0;
+    padding-left: 24px;
+    text-align: right;
+  }
+}
+
+/* Certificates */
+.cert-grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.cert-card {
+  width: 100%;
+  text-align: left;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  cursor: pointer;
+  transition:
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out);
+}
+
+.cert-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-pop);
+}
+
+.cert-card h3 {
+  font-size: 21px;
+  margin-top: 10px;
+}
+
+.cert-card p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.cert-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pine);
+}
+
+@media (min-width: 768px) {
+  .cert-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
