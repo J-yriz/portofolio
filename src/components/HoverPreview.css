@@ -1,0 +1,87 @@
+/* HoverPreview — inline trigger keeps the .skill-mark underline look,
+   preview card floats in a portal using the site design tokens. */
+
+.hover-preview-trigger {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+  transition: color 0.2s var(--ease-out);
+}
+
+.hover-preview-trigger:hover {
+  color: var(--pine);
+}
+
+/* Positioning shell driven by the rAF follow loop (translate3d only —
+   compositor-friendly, no layout work while the cursor moves). */
+.hover-preview-float {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 40;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hover-preview-card {
+  aspect-ratio: 1 / 1;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  padding: 8px;
+  opacity: 0;
+  --hp-tilt: 0deg;
+  transform: translateX(-50%) scale(0.92) translateY(6px) rotate(var(--hp-tilt));
+  transition:
+    opacity 0.18s var(--ease-out),
+    transform 0.22s var(--ease-out);
+}
+
+.hover-preview-card.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) scale(1) translateY(0) rotate(var(--hp-tilt));
+}
+
+.hover-preview-card[data-placement='above'] {
+  transform-origin: bottom center;
+}
+
+.hover-preview-card[data-placement='below'] {
+  transform-origin: top center;
+}
+
+.hover-preview-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  user-select: none;
+}
+
+.hover-preview-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 44px;
+  color: var(--pine);
+  background: linear-gradient(150deg, #dcebe3 0%, #9fc3b2 100%);
+  border-radius: 10px;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-preview-card {
+    transition: none;
+    --hp-tilt: 0deg !important;
+  }
+}

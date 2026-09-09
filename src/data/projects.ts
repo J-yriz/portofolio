@@ -34,6 +34,7 @@ export const projects: Project[] = [
     description:
       'Backoffice web app for an underwear retail brand. Multi-outlet sales dashboard, orders, delivery, returns, bundles, promos, loyalty members, and warehouse stock management — full-stack Next.js + NestJS, built as an office project at Logika Data.',
     tags: ['Next.js', 'NestJS'],
+    image: '/images/jegeg-backoffice.webp',
   },
   {
     name: 'CMIS — Construction MIS',
@@ -43,6 +44,7 @@ export const projects: Project[] = [
     description:
       'Construction Management Information System for contractors. Project tracking, RAB budgeting, purchase orders, invoices, cashflow, and financial reports with role-based access — full-stack Next.js + NestJS, built as an office project at Logika Data.',
     tags: ['Next.js', 'NestJS', 'MUI'],
+    image: '/images/cmis.webp',
   },
   {
     name: 'PoS Pembangunan Web',
@@ -52,6 +54,7 @@ export const projects: Project[] = [
     description:
       'Back-office POS web app for a building-materials store. Sales, purchasing, expenses, stock opname, master data, and financial reports with a KPI dashboard — full-stack Next.js + Express.js, built as an office project at Logika Data.',
     tags: ['Next.js', 'Express', 'MUI'],
+    image: '/images/pos-pembangunan.webp',
   },
   {
     name: 'PRD Creator',
@@ -72,6 +75,7 @@ export const projects: Project[] = [
       'Webstore for the Waznet Minecraft server. Product catalog and checkout flow built with Next.js and TypeScript.',
     tags: ['Node.js', 'Next.js', 'TypeScript', 'Tailwind CSS'],
     website: 'https://store.minesive.com/',
+    image: '/images/waznet-webstore.webp',
   },
   {
     name: 'Nezon Portfolio',

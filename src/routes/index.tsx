@@ -1,8 +1,10 @@
+import { Fragment } from 'react'
 import { Link, createFileRoute } from '@tanstack/react-router'
 import { ArrowRight, MapPin } from '@phosphor-icons/react'
+import { HoverPreview } from '../components/HoverPreview'
 import { ProjectCard } from '../components/ProjectCard'
 import { Reveal } from '../components/Reveal'
-import { allSkills } from '../data/skills'
+import { skillPreviewImages, skillStory } from '../data/skills'
 import { experience } from '../data/experience'
 import { featuredProjects } from '../data/projects'
 import { site } from '../data/site'
@@ -95,16 +97,26 @@ function HomePage() {
       <section className="container section">
         <Reveal>
           <h2>What I work with</h2>
-          <p className="section-sub">
-            Fourteen technologies I reach for, from markup to containers.
-          </p>
         </Reveal>
         <Reveal delay={100}>
-          <ul className="skills-grid">
-            {allSkills.map((s) => (
-              <li key={s}>{s}</li>
-            ))}
-          </ul>
+          <p className="skills-prose">
+            {skillStory.map((part, i) => {
+              const content = 'skill' in part ? part.skill : part.text
+              const needsSpace = i > 0 && !/^[,.]/.test(content)
+              return (
+                <Fragment key={i}>
+                  {needsSpace ? ' ' : null}
+                  {'skill' in part ? (
+                    <HoverPreview image={skillPreviewImages[content]} alt={content}>
+                      {content}
+                    </HoverPreview>
+                  ) : (
+                    content
+                  )}
+                </Fragment>
+              )
+            })}
+          </p>
         </Reveal>
       </section>
 
