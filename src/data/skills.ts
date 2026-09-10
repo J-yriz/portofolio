@@ -28,6 +28,10 @@ export const skillStory: StoryPart[] = [
   { skill: 'Express' },
   { text: ', and' },
   { skill: 'Golang' },
+  { text: 'with' },
+  { skill: 'Gin' },
+  { text: 'and' },
+  { skill: 'GORM' },
   { text: 'power the services that keep everything running, with' },
   { skill: 'Prisma' },
   { text: 'handling the data so nothing gets lost or messy. And once everything\'s built,' },
@@ -57,6 +61,8 @@ export const skillPreviewImages: Record<string, string> = {
   'Node.js': `${DEVICON}/nodejs/nodejs-original.svg`,
   Express: `${DEVICON}/express/express-original.svg`,
   Golang: `${DEVICON}/go/go-original.svg`,
+  Gin: `${DEVICON}/gin/gin-original.svg`,
+  GORM: 'https://cdn.jsdelivr.net/gh/go-gorm/gorm.io/img/gorm.svg',
   Prisma: `${DEVICON}/prisma/prisma-original.svg`,
   Git: `${DEVICON}/git/git-original.svg`,
   Docker: `${DEVICON}/docker/docker-original.svg`,
@@ -79,6 +85,8 @@ export const allSkills: string[] = [
   'Prisma',
   'Docker',
   'Golang',
+  'Gin',
+  'GORM',
   'Microsoft Office'
 ]
 
