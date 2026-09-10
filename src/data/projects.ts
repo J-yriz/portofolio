@@ -87,6 +87,7 @@ export const projects: Project[] = [
     tags: ['Node.js', 'Next.js', 'TypeScript', 'Tailwind CSS'],
     website: 'https://nezon-porto.vercel.app/',
     github: 'https://github.com/J-yriz/nezon-porto',
+    image: '/images/nezon-portfolio.webp',
   },
   {
     name: 'Spotify Clone',
