@@ -21,11 +21,11 @@ export const experience: Experience[] = [
     tags: ['Next.js', 'NestJS', 'PoS'],
   },
   {
-    role: 'Freelance Website Developer',
+    role: 'Full Stack Developer',
     company: 'Raznar',
     companyHref: 'https://raznar.id/',
     period: 'Jul 2023 — Dec 2025',
-    location: 'Tangerang, ID | Remote',
+    location: 'Tangerang, ID | Remote Freelance',
     body: 'Designing and shipping web apps, store backends, and Discord bots for game communities and small teams.',
     tags: ['Full-Stack', 'Bots', 'Stores'],
   },
