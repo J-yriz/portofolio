@@ -12,7 +12,7 @@ export interface Experience {
 
 export const experience: Experience[] = [
   {
-    role: 'FullStack Developer',
+    role: 'Full Stack Developer',
     company: 'Logika Data',
     companyHref: 'https://logikadata.co.id/',
     period: 'Dec 2025 - Present',
