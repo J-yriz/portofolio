@@ -15,7 +15,7 @@ export const experience: Experience[] = [
     role: 'Full Stack Developer',
     company: 'Logika Data',
     companyHref: 'https://logikadata.co.id/',
-    period: 'Dec 2025 - Present',
+    period: 'Dec 2025 - September 2026',
     location: 'Semarang, ID | Remote',
     body: 'Full-stack developer building PoS systems, backoffice dashboards, and business websites for SMEs with Next.js on the frontend and NestJS on the backend.',
     tags: ['Next.js', 'NestJS', 'PoS'],
