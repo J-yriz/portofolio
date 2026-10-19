@@ -198,6 +198,18 @@ section h2 {
   color: var(--ink);
 }
 
+@media (max-width: 480px) {
+  .hero-badge {
+    padding: 10px 14px;
+    gap: 8px;
+    bottom: 4%;
+  }
+
+  .hero-badge p:last-child {
+    font-size: 14px;
+  }
+}
+
 @media (min-width: 1024px) {
   .hero {
     grid-template-columns: 1.05fr 0.95fr;

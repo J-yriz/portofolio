@@ -27,34 +27,24 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    name: 'Jegeg Underwear Backoffice',
-    year: '2026',
-    category: 'web',
-    categoryLabel: 'E-Commerce',
-    description:
-      'Backoffice web app for an underwear retail brand. Multi-outlet sales dashboard, orders, delivery, returns, bundles, promos, loyalty members, and warehouse stock management — full-stack Next.js + NestJS, built as an office project at Logika Data.',
-    tags: ['Next.js', 'NestJS'],
-    image: '/images/jegeg-backoffice.webp',
-  },
-  {
     name: 'CMIS — Construction MIS',
     year: '2026',
     category: 'web',
     categoryLabel: 'ERP / MIS',
     description:
-      'Construction Management Information System for contractors. Project tracking, RAB budgeting, purchase orders, invoices, cashflow, and financial reports with role-based access — full-stack Next.js + NestJS, built as an office project at Logika Data.',
-    tags: ['Next.js', 'NestJS', 'MUI'],
+      'Construction Management Information System for contractors. Project tracking, RAB budgeting, purchase orders, invoices, and cashflow with role-based access control and comprehensive financial reporting.',
+    tags: ['TypeScript', 'Next.js', 'NestJS', 'PostgreSQL'],
     image: '/images/cmis.webp',
   },
   {
-    name: 'PoS Pembangunan Web',
+    name: 'Jegeg Underwear Backoffice',
     year: '2026',
     category: 'web',
-    categoryLabel: 'POS System',
+    categoryLabel: 'E-Commerce',
     description:
-      'Back-office POS web app for a building-materials store. Sales, purchasing, expenses, stock opname, master data, and financial reports with a KPI dashboard — full-stack Next.js + Express.js, built as an office project at Logika Data.',
-    tags: ['Next.js', 'Express', 'MUI'],
-    image: '/images/pos-pembangunan.webp',
+      'Backoffice web app for an underwear retail brand. Multi-outlet sales dashboard, orders, delivery, returns, bundles, promos, loyalty members, and warehouse stock management.',
+    tags: ['Next.js', 'NestJS'],
+    image: '/images/jegeg-backoffice.webp',
   },
   {
     name: 'PRD Creator',
@@ -67,13 +57,23 @@ export const projects: Project[] = [
     github: 'https://github.com/J-yriz/prd-creator',
   },
   {
-    name: 'Waznet Webstore',
+    name: 'PoS Pembangunan Web',
+    year: '2025',
+    category: 'web',
+    categoryLabel: 'POS System',
+    description:
+      'Full-stack back-office POS web app for a building-materials store. Sales, purchasing, expenses, stock opname, master data, and KPI dashboard with financial reporting.',
+    tags: ['TypeScript', 'Next.js', 'Express.js', 'MariaDB'],
+    image: '/images/pos-pembangunan.webp',
+  },
+  {
+    name: 'Marketplace Item In-Game',
     year: '2025',
     category: 'web',
     categoryLabel: 'E-Commerce',
     description:
-      'Webstore for the Waznet Minecraft server. Product catalog and checkout flow built with Next.js and TypeScript.',
-    tags: ['Node.js', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+      'Marketplace web application for Minecraft server featuring payment gateway integration, administrative management panel, and synchronized player data.',
+    tags: ['TypeScript', 'Next.js', 'Golang', 'MariaDB'],
     website: 'https://store.minesive.com/',
     image: '/images/waznet-webstore.webp',
   },
@@ -102,4 +102,6 @@ export const projects: Project[] = [
 ]
 
 /* Home shows the newest 3 automatically — keep this array newest-first. */
-export const featuredProjects: Project[] = projects.slice(0, 3)
+export const featuredProjects: Project[] = [...projects]
+  .sort((a, b) => Number(b.year) - Number(a.year))
+  .slice(0, 3)

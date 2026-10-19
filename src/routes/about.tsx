@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import { ArrowUpRight, Briefcase, Certificate as CertificateIcon } from '@phosphor-icons/react'
+import { ArrowUpRight, Briefcase, Certificate as CertificateIcon, GraduationCap, Users } from '@phosphor-icons/react'
 import { Modal } from '../components/Modal'
 import { Reveal } from '../components/Reveal'
-import { certificates, experience, type Certificate } from '../data/experience'
+import { certificates, education, experience, organizations, type Certificate } from '../data/experience'
 import { capabilities } from '../data/skills'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import './about.css'
@@ -21,10 +21,11 @@ function AboutPage() {
       <section className="container section">
         <h1 className="page-title">Developer who ships.</h1>
         <p className="page-sub page-sub-wide">
-          I&apos;m Fajar Aziz Kurniawan, a full-stack developer at Logika
-          Data, building PoS systems, backoffice dashboards, and websites
-          for SMEs with Next.js and NestJS. Previously freelancing at
-          Raznar, I started out in quality assurance at Nexa.
+          I&apos;m Fajar Aziz Kurniawan, a full-stack developer based in
+          Semarang, building PoS systems, backoffice dashboards, and web
+          apps for SMEs with Next.js, NestJS, and Golang. With a background
+          in freelance development and quality assurance, I care about clean
+          APIs, reliable databases, and interfaces that stay simple to use.
         </p>
       </section>
 
@@ -83,6 +84,96 @@ function AboutPage() {
                 <div className="timeline-side">
                   <p className="timeline-period">{e.period}</p>
                   <p className="timeline-loc">{e.location}</p>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="container section">
+        <Reveal>
+          <h2 className="row-title">
+            <GraduationCap size={26} aria-hidden />
+            Education
+          </h2>
+        </Reveal>
+        <div className="timeline">
+          {education.map((edu) => (
+            <Reveal key={edu.institution}>
+              <article className="timeline-row">
+                <div className="timeline-main">
+                  <h3>{edu.degree}</h3>
+                  {edu.institutionHref ? (
+                    <a
+                      href={edu.institutionHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="timeline-company"
+                    >
+                      {edu.institution}
+                      <ArrowUpRight size={15} weight="bold" aria-hidden />
+                    </a>
+                  ) : (
+                    <p className="timeline-company">{edu.institution}</p>
+                  )}
+                  <p className="timeline-body">{edu.body}</p>
+                  <div className="timeline-tags">
+                    {edu.tags.map((t) => (
+                      <span key={t} className="tag">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="timeline-side">
+                  <p className="timeline-period">{edu.period}</p>
+                  <p className="timeline-loc">{edu.location}</p>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="container section">
+        <Reveal>
+          <h2 className="row-title">
+            <Users size={26} aria-hidden />
+            Organization
+          </h2>
+        </Reveal>
+        <div className="timeline">
+          {organizations.map((org) => (
+            <Reveal key={`${org.organization}-${org.role}`}>
+              <article className="timeline-row">
+                <div className="timeline-main">
+                  <h3>{org.role}</h3>
+                  {org.organizationHref ? (
+                    <a
+                      href={org.organizationHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="timeline-company"
+                    >
+                      {org.organization}
+                      <ArrowUpRight size={15} weight="bold" aria-hidden />
+                    </a>
+                  ) : (
+                    <p className="timeline-company">{org.organization}</p>
+                  )}
+                  <p className="timeline-body">{org.body}</p>
+                  <div className="timeline-tags">
+                    {org.tags.map((t) => (
+                      <span key={t} className="tag">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="timeline-side">
+                  <p className="timeline-period">{org.period}</p>
+                  <p className="timeline-loc">{org.location}</p>
                 </div>
               </article>
             </Reveal>

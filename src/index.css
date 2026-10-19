@@ -137,6 +137,12 @@ img {
   padding-inline: 24px;
 }
 
+@media (max-width: 360px) {
+  .container {
+    padding-inline: 16px;
+  }
+}
+
 @media (min-width: 768px) {
   .container {
     padding-inline: 48px;
@@ -252,4 +258,17 @@ img {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Screen-reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

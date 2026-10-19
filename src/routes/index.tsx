@@ -16,7 +16,7 @@ export const Route = createFileRoute('/')({
 })
 
 function HomePage() {
-  useDocumentTitle('Jariz — Website Developer')
+  useDocumentTitle('Jariz — Full Stack Developer')
 
   return (
     <main className="page">
@@ -29,8 +29,8 @@ function HomePage() {
             Kurniawan.
           </h1>
           <p className="hero-sub">
-            Full-stack web developer building fast, maintainable apps with
-            TypeScript, Node.js, and modern tooling.
+            Full-stack developer based in Semarang, building fast, maintainable apps with
+            TypeScript, Golang, and modern tooling.
           </p>
           <dl className="hero-stats">
             {site.stats.map((s) => (

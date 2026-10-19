@@ -15,28 +15,80 @@ export const experience: Experience[] = [
     role: 'Full Stack Developer',
     company: 'Logika Data',
     companyHref: 'https://logikadata.co.id/',
-    period: 'Dec 2025 - September 2026',
+    period: 'Dec 2025 — Oct 2026',
     location: 'Semarang, ID | Remote',
-    body: 'Full-stack developer building PoS systems, backoffice dashboards, and business websites for SMEs with Next.js on the frontend and NestJS on the backend.',
-    tags: ['Next.js', 'NestJS', 'PoS'],
+    body: 'Developed and maintained full-stack web applications for SMEs using Next.js and NestJS, designed relational databases with MariaDB and PostgreSQL, and built PoS and backoffice systems.',
+    tags: ['Next.js', 'NestJS', 'PostgreSQL', 'MariaDB'],
   },
   {
     role: 'Full Stack Developer',
     company: 'Raznar',
     companyHref: 'https://raznar.id/',
     period: 'Jul 2023 — Dec 2025',
-    location: 'Tangerang, ID | Remote Freelance',
-    body: 'Designing and shipping web apps, store backends, and Discord bots for game communities and small teams.',
-    tags: ['Full-Stack', 'Bots', 'Stores'],
+    location: 'Tangerang Selatan, ID | Remote Freelance',
+    body: 'Integrated third-party payment gateways (Midtrans/Xendit) to facilitate secure transactions, and built buying and selling web applications with Next.js and Golang using Tripay.',
+    tags: ['Next.js', 'Golang', 'Payment Gateway', 'MySQL'],
   },
   {
     role: 'Quality Assurance Intern',
-    company: 'Nexa',
-    companyHref: 'https://nexa.net.id/',
+    company: 'GMEDIA',
+    companyHref: 'https://gmedia.net.id/',
     period: 'Dec 2022 — Apr 2023',
     location: 'Semarang, ID | On Site',
-    body: 'Work placement at an internet service provider. Tested releases and learned how production systems stay reliable.',
-    tags: ['QA', 'Production'],
+    body: 'Conducted rigorous functional and manual testing on web applications to ensure quality software delivery, zero-bug deployment, and clear defect reporting.',
+    tags: ['QA', 'Manual Testing', 'Functional Testing'],
+  },
+]
+
+export interface Education {
+  degree: string
+  institution: string
+  institutionHref?: string
+  period: string
+  location: string
+  body: string
+  tags: string[]
+}
+
+export const education: Education[] = [
+  {
+    degree: 'S1 Computer Science',
+    institution: 'Universitas Dian Nuswantoro',
+    institutionHref: 'https://dinus.ac.id/',
+    period: 'Sep 2024 — Present',
+    location: 'Semarang, ID',
+    body: 'Undergraduate computer science program focusing on software engineering, web application development, algorithms, and database systems.',
+    tags: ['Web Programming', 'Algorithms', 'Database Systems'],
+  },
+  {
+    degree: 'Software Engineering (RPL)',
+    institution: 'SMK Ibu Kartini',
+    period: 'Jul 2021 — Jun 2024',
+    location: 'Semarang, ID',
+    body: 'Vocational high school education focused on software engineering fundamentals, web development, and design systems.',
+    tags: ['Software Engineering', 'Web Development', 'Design System'],
+  },
+]
+
+export interface Organization {
+  role: string
+  organization: string
+  organizationHref?: string
+  period: string
+  location: string
+  body: string
+  tags: string[]
+}
+
+export const organizations: Organization[] = [
+  {
+    role: 'Project Manager',
+    organization: 'Dinus Open Source Community (DOSCOM)',
+    organizationHref: 'https://github.com/doscom',
+    period: 'Nov 2024 — Present',
+    location: 'Semarang, ID',
+    body: 'Leading project execution, coordinating cross-functional teams, and driving engineering deliverables. Progressed from Member of Programmer Division (Nov 2024 – Nov 2025) to Back End Developer (Nov 2025 – Jun 2026), and promoted to Project Manager.',
+    tags: ['Project Management', 'Back End Developer', 'Programmer Division', 'Open Source'],
   },
 ]
 

@@ -40,3 +40,6 @@ vite.config.*.timestamp-*.mjs
 *.njsproj
 *.sln
 *.sw?
+
+# Local test screenshots
+screenshots/

@@ -101,6 +101,50 @@
   color: var(--ink);
 }
 
+@media (max-width: 480px) {
+  .navbar-inner {
+    gap: 8px;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .btn-sm {
+    padding: 9px 14px;
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .nav-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand {
+    font-size: 18px;
+    gap: 6px;
+  }
+
+  .nav-actions {
+    gap: 6px;
+  }
+
+  .btn-sm {
+    padding: 8px 10px;
+    font-size: 12px;
+    gap: 4px;
+  }
+
+  .nav-toggle {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 @media (min-width: 768px) {
   .nav-desktop {
     display: flex;

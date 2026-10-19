@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from '@tanstack/react-router'
-import { Cube, DownloadSimple, List, X } from '@phosphor-icons/react'
+import { DownloadSimple, List, X } from '@phosphor-icons/react'
 import { site } from '../data/site'
 import './Navbar.css'
 
@@ -11,7 +11,6 @@ export function Navbar() {
     <header className="navbar">
       <div className="container navbar-inner">
         <Link to="/" className="brand" onClick={() => setOpen(false)}>
-          <Cube size={26} weight="regular" aria-hidden />
           <span>{site.brand}</span>
         </Link>
 
@@ -34,7 +33,7 @@ export function Navbar() {
             download={site.cvFilename}
             className="btn btn-primary btn-sm"
           >
-            <span>Hire</span>
+            <span>Download CV</span>
             <DownloadSimple size={17} weight="bold" aria-hidden />
           </a>
           <button

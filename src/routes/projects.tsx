@@ -14,8 +14,11 @@ function ProjectsPage() {
   useDocumentTitle('Projects — Jariz')
   const [filter, setFilter] = useState<ProjectCategory | 'all'>('all')
 
-  const visible =
+  const visible = (
     filter === 'all' ? projects : projects.filter((p) => p.category === filter)
+  )
+    .slice()
+    .sort((a, b) => Number(b.year) - Number(a.year))
 
   return (
     <main className="page container section">
@@ -42,6 +45,8 @@ function ProjectsPage() {
       <p className="filter-count" aria-live="polite">
         Showing {visible.length} of {projects.length}
       </p>
+
+      <h2 className="sr-only">Project list</h2>
 
       <div className="projects-grid">
         {visible.map((p, i) => (
